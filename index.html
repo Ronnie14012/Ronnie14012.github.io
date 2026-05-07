@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronnie14012 | Portfolio</title>
+    <style>
+        /* Modern Dark Theme CSS */
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --secondary-bg: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+        .accent { color: var(--accent-color); }
+        
+        .nav-links { margin-top: 20px; }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .container { max-width: 900px; margin: auto; padding: 50px 20px; }
+        
+        .section-title {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover { transform: translateY(-5px); }
+
+        footer { text-align: center; padding: 40px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hi, I'm <span class="accent">Ronnie14012</span></h1>
+        <p>A Custom Coder & Creative Developer</p>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="mailto:your-email@example.com">Contact</a>
+        </div>
+    </header>
+
+    <div class="container" id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am building custom-coded solutions directly on GitHub. Welcome to my enigma-themed portfolio where I showcase my journey in development.</p>
+    </div>
+
+    <div class="container" id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>A custom web application built with clean HTML and CSS.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>Interactive UI design focused on user experience.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Three</h3>
+                <p>Data visualization and logic-based coding projects.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ronnie14012. Built with ❤️ on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
