@@ -13,8 +13,6 @@
             --secondary-bg: #1e293b;
         }
 
-        html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -22,29 +20,6 @@
             margin: 0;
             line-height: 1.6;
         }
-
-        /* Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            text-align: center;
-            border-bottom: 1px solid var(--secondary-bg);
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--accent-color); }
 
         header {
             height: 100vh;
@@ -59,7 +34,17 @@
         h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
         .accent { color: var(--accent-color); }
         
-        .container { max-width: 900px; margin: auto; padding: 100px 20px 50px 20px; }
+        .nav-links { margin-top: 20px; }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .container { max-width: 900px; margin: auto; padding: 50px 20px; }
         
         .section-title {
             font-size: 2rem;
@@ -78,54 +63,30 @@
             background: var(--secondary-bg);
             padding: 20px;
             border-radius: 10px;
-            transition: 0.3s;
-            border: 1px solid transparent;
+            transition: transform 0.3s;
         }
 
-        .project-card:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--accent-color);
-        }
+        .project-card:hover { transform: translateY(-5px); }
 
-        /* Contact Section */
-        .contact-box {
-            background: var(--secondary-bg);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--bg-color);
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .btn:hover { opacity: 0.9; transform: scale(1.05); }
-
-        footer { text-align: center; padding: 40px; color: #64748b; border-top: 1px solid var(--secondary-bg); }
+        footer { text-align: center; padding: 40px; color: #64748b; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="#projects">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
     <header>
         <h1>Hi, I'm <span class="accent">Ronnie14012</span></h1>
         <p>A Custom Coder & Creative Developer</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="mailto:your-email@example.com">Contact</a>
+        </div>
     </header>
+
+    <div class="container" id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am building custom-coded solutions directly on GitHub. Welcome to my enigma-themed portfolio where I showcase my journey in development.</p>
+    </div>
 
     <div class="container" id="projects">
         <h2 class="section-title">My Projects</h2>
@@ -142,14 +103,6 @@
                 <h3>Project Three</h3>
                 <p>Data visualization and logic-based coding projects.</p>
             </div>
-        </div>
-    </div>
-
-    <div class="container" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-box">
-            <p>I'm currently open to new opportunities and collaborations!</p>
-            <a href="mailto:your-email@example.com" class="btn">Send an Email</a>
         </div>
     </div>
 
