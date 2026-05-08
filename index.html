@@ -1,225 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>ADDO Portfolio</title>
+    <meta charset="UTF-8" />
 
-  
-  
-  <style>
-	*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
 
-body{
-  font-family: Arial, sans-serif;
-  background:#f5f5f5;
-  color:#111;
-  display:flex;
-  overflow:hidden;
-}
+    <title>RONNIE Portfolio</title>
 
-/* SIDEBAR */
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="assets/css/style.css" />
 
-.sidebar{
-  width:280px;
-  height:100vh;
-  background:#050505;
-  color:#fff;
-  padding:60px 30px;
-  position:fixed;
-  left:0;
-  top:0;
-}
-
-.logo h1{
-  font-size:60px;
-  letter-spacing:4px;
-}
-
-.logo span{
-  color:#777;
-  letter-spacing:3px;
-  font-size:14px;
-}
-
-nav{
-  margin-top:80px;
-}
-
-nav ul{
-  list-style:none;
-}
-
-nav ul li{
-  margin-bottom:25px;
-}
-
-.nav-link{
-  color:#888;
-  text-decoration:none;
-  font-size:15px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active{
-  color:#fff;
-}
-
-/* CONTENT */
-
-#content{
-  margin-left:280px;
-  width:calc(100% - 280px);
-  height:100vh;
-  overflow-y:auto;
-  position:relative;
-  opacity:1;
-  transition:0.4s;
-}
-
-/* PAGE TRANSITION */
-
-.fade-out{
-  opacity:0;
-}
-
-/* PAGE SECTION */
-
-.page{
-  min-height:100vh;
-  padding:80px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-  body{
-    flex-direction:column;
-    overflow:auto;
-  }
-
-  .sidebar{
-    width:100%;
-    height:auto;
-    position:relative;
-    padding:30px;
-  }
-
-  #content{
-    margin-left:0;
-    width:100%;
-    height:auto;
-  }
-
-}
-  </style>
 </head>
+
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
-    <div class="logo">
-      <h1>ADDO</h1>
-      <span>Adam Dornan</span>
-    </div>
+    <aside class="sidebar">
 
-    <nav>
-      <ul>
-        <li><a href="home" class="nav-link active">Home</a></li>
-        <li><a href="about" class="nav-link">About</a></li>
-        <li><a href="portfolio" class="nav-link">Portfolio</a></li>
-        <li><a href="services" class="nav-link">Services</a></li>
-        <li><a href="contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
+        <div class="logo">
 
-  </aside>
+            <h1>deCoder</h1>
 
-  <!-- MAIN CONTENT -->
-  <main id="content">
+            <span>The Enigma Coder</span>
 
-  </main>
+        </div>
 
-  <script>
-	const content = document.getElementById("content");
-const navLinks = document.querySelectorAll(".nav-link");
+        <nav>
 
-/* LOAD PAGE */
+            <ul>
 
-async function loadPage(page){
+                <li>
+                    <a href="home"
+                       class="nav-link active">
+                        Home
+                    </a>
+                </li>
 
-  content.classList.add("fade-out");
+                <li>
+                    <a href="about"
+                       class="nav-link">
+                        About
+                    </a>
+                </li>
 
-  setTimeout(async ()=>{
+                <li>
+                    <a href="portfolio"
+                       class="nav-link">
+                        Portfolio
+                    </a>
+                </li>
 
-    const response = await fetch(`pages/${page}.html`);
-    const data = await response.text();
+                <li>
+                    <a href="services"
+                       class="nav-link">
+                        Services
+                    </a>
+                </li>
 
-    content.innerHTML = data;
+                <li>
+                    <a href="contact"
+                       class="nav-link">
+                        Contact
+                    </a>
+                </li>
 
-    content.classList.remove("fade-out");
+            </ul>
 
-  },200);
+        </nav>
 
-}
+    </aside>
 
-/* NAVIGATION */
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
-navLinks.forEach(link=>{
+    <main id="content">
 
-  link.addEventListener("click",(e)=>{
+        <!-- AJAX content loads here -->
 
-    e.preventDefault();
+    </main>
 
-    const page = link.getAttribute("href");
-
-    /* ACTIVE CLASS */
-
-    navLinks.forEach(nav=>nav.classList.remove("active"));
-    link.classList.add("active");
-
-    /* LOAD PAGE */
-
-    loadPage(page);
-
-    /* URL CHANGE */
-
-    history.pushState(null,null,`#${page}`);
-
-  });
-
-});
-
-/* INITIAL PAGE */
-
-window.addEventListener("DOMContentLoaded",()=>{
-
-  const page = location.hash.replace("#","") || "home";
-
-  loadPage(page);
-
-});
-
-/* BACK BUTTON SUPPORT */
-
-window.addEventListener("popstate",()=>{
-
-  const page = location.hash.replace("#","") || "home";
-
-  loadPage(page);
-
-});
-  </script>
+    <!-- JS -->
+    <script src="assets/js/app.js"></script>
 
 </body>
+
 </html>
